@@ -5,7 +5,7 @@
 #include <cmath>
 
 
-Ambiente::Ambiente(float sizeIlha)
+Ambiente::Ambiente(float sizeIlha):sizeIlha(sizeIlha)
 {
     //carregar a textura do chão.
 
@@ -13,7 +13,9 @@ Ambiente::Ambiente(float sizeIlha)
 }
 void Ambiente::criarIlha(vector<vector<char>> &mundo){
     //considerando que a matriz 100x80 tera 80 por cento da ilha
+
     float porOceano = 100 - this->sizeIlha;
+
     int initX = porOceano/4;
     int intiZ = porOceano/4;
     int endX = (int) (mundo[0].size() - (porOceano/4));
